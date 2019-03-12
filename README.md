@@ -7,4 +7,4 @@ Pedro Farah
 
 Screenshots 
 
-![](easy/talents/webApi/TelaCadastroCandidatos.png)
+![](https://raw.githubusercontent.com/pedrofarah/easy/master/talents/webApi/TelaCadastroCandidatos.png)
