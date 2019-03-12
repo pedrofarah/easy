@@ -1,0 +1,22 @@
+<div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+      <h3>Cadastro de Disponibilidade de Horas</h3>
+      <div class="d-inline" style="padding-bottom: 5px; padding-top: 5px;"><a href="#" class="btn btn-success" routerLink="novo">Novo</a></div>
+      <table class="table table-striped table-hover">
+        <tr>
+          <td><input type="text" class="form-control edt_pesquisar_codigo" id="edtDispHorasPesqCodigo" placeholder="Pesquisar por código" (input)="DispHorasPesquisarCodigo($event.target.value)"></td>
+          <td><input type="text" class="form-control" id="edtDispHorasPesqDescricao" placeholder="Pesquisar por descrição" (input)="DispHorasPesquisarDescricao($event.target.value)"></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr *ngFor="let itens of Lst_disphoras; index as idx">
+          <td>{{itens.id}}</td>
+          <td>{{itens.descricao}}</td>
+          <td><button type="button" class="btn btn-primary" (click)="editar(itens);">Editar</button></td>
+          <td><button type="button" class="btn btn-danger" (click)="excluir(itens, idx);">Excluir</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

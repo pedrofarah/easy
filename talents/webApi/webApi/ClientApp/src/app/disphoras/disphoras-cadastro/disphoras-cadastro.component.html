@@ -1,0 +1,24 @@
+<div>
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Cadastro de Disponibilidade de Horas</h3>
+      <form class="mt-5" (ngSubmit)='onSubmit()' [formGroup]='frm'>
+
+        <div [ngClass]="validadorFormGroup.getFormGroupClass(frm.controls.id)">
+          <label for="id" class="form-control-label">ID</label>
+          <input type="text" class="form-control" placeholder="ID" formControlName='id' [attr.disabled]="true">
+        </div>
+
+        <div [ngClass]="validadorFormGroup.getFormGroupClass(frm.controls.descricao)">
+          <label for="nome" class="form-control-label">Descrição *</label>
+          <input type="text" class="form-control" placeholder="Descrição" formControlName='descricao' #edit_dispHoras_nome>
+          <validador-campo [controle]=frm.controls.descricao></validador-campo>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg" [disabled]="!frm.valid">Gravar</button>
+
+      </form>
+
+    </div>
+  </div>
+</div>

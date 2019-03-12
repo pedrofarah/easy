@@ -1,0 +1,13 @@
+D:\projetos\easy\talents\webApi\UnitTestSelenium\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\projetos\easy\talents\webApi\UnitTestSelenium\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\projetos\easy\talents\webApi\UnitTestSelenium\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\projetos\easy\talents\webApi\UnitTestSelenium\bin\Debug\netcoreapp2.1\UnitTestSelenium.deps.json
+D:\projetos\easy\talents\webApi\UnitTestSelenium\bin\Debug\netcoreapp2.1\UnitTestSelenium.runtimeconfig.json
+D:\projetos\easy\talents\webApi\UnitTestSelenium\bin\Debug\netcoreapp2.1\UnitTestSelenium.runtimeconfig.dev.json
+D:\projetos\easy\talents\webApi\UnitTestSelenium\bin\Debug\netcoreapp2.1\UnitTestSelenium.dll
+D:\projetos\easy\talents\webApi\UnitTestSelenium\obj\Debug\netcoreapp2.1\UnitTestSelenium.csproj.CoreCompileInputs.cache
+D:\projetos\easy\talents\webApi\UnitTestSelenium\obj\Debug\netcoreapp2.1\UnitTestSelenium.AssemblyInfoInputs.cache
+D:\projetos\easy\talents\webApi\UnitTestSelenium\obj\Debug\netcoreapp2.1\UnitTestSelenium.AssemblyInfo.cs
+D:\projetos\easy\talents\webApi\UnitTestSelenium\bin\Debug\netcoreapp2.1\UnitTestSelenium.pdb
+D:\projetos\easy\talents\webApi\UnitTestSelenium\obj\Debug\netcoreapp2.1\UnitTestSelenium.dll
+D:\projetos\easy\talents\webApi\UnitTestSelenium\obj\Debug\netcoreapp2.1\UnitTestSelenium.pdb

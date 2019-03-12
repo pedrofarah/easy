@@ -1,0 +1,126 @@
+<div>
+
+  <div class="row">
+    <div class="col-md-6 col-sm-6">
+      <h3>Cadastro de Candidatos</h3>
+    </div>
+    <div *ngIf="CarregandoDados" class="col-md-6 col-sm-6 alert ">
+      <span class="badge badge-secondary">Carregando dados. Aguarde.</span>
+    </div>
+  </div>
+
+      <form class="mt-5" (ngSubmit)='onSubmit()' [formGroup]='frm'>
+
+        <div *ngIf="!NovoRegistro" [ngClass]="validadorFormGroup.getFormGroupClass(frm.controls.id)">
+          <label for="id" class="form-control-label">ID</label>
+          <input type="text" class="form-control" placeholder="ID" id="id" formControlName='id' [attr.disabled]="true">
+        </div>
+
+        <div [ngClass]="validadorFormGroup.getFormGroupClass(frm.controls.email)">
+          <label for="email" class="form-control-label">Endereço de e-mail *</label>
+          <input type="text" class="form-control" placeholder="Endereço de e-mail" id="email" formControlName="email" #edtemail>
+          <validador-campo [controle]=frm.controls.email></validador-campo>
+        </div>
+
+        <div [ngClass]="validadorFormGroup.getFormGroupClass(frm.controls.nome)">
+          <label for="nome" class="form-control-label">Nome/Name: *</label>
+          <input type="text" class="form-control" placeholder="Nome/Name" id="nome" formControlName='nome'>
+          <validador-campo [controle]=frm.controls.nome></validador-campo>
+        </div>
+
+        <div [ngClass]="validadorFormGroup.getFormGroupClass(frm.controls.skype)">
+          <label for="skype" class="form-control-label">Skype: ( please create an account if you don't have yet / bom criar caso não tenha) *</label>
+          <input type="text" class="form-control" placeholder="Skype" formControlName='skype' id="skype">
+          <validador-campo [controle]=frm.controls.skype></validador-campo>
+        </div>
+
+        <div [ngClass]="validadorFormGroup.getFormGroupClass(frm.controls.telefone)">
+          <label for="telefone" class="form-control-label">Telefone/Phone (Whatsapp): *</label>
+          <input type="text" class="form-control" placeholder="Telefone/Phone (Whatsapp)" id="telefone" formControlName='telefone'>
+          <validador-campo [controle]=frm.controls.telefone></validador-campo>
+        </div>
+
+        <div class="form-group">
+          <label for="linkedin" class="form-control-label">Linkedin:</label>
+          <input type="text" class="form-control" placeholder="Linkedin" formControlName='linkedin'>
+        </div>
+
+        <div [ngClass]="validadorFormGroup.getFormGroupClass(frm.controls.cidade)">
+          <label for="cidade" class="form-control-label">Cidade/City *</label>
+          <input type="text" class="form-control" placeholder="Cidade/City" id="cidade" formControlName='cidade'>
+          <validador-campo [controle]=frm.controls.cidade></validador-campo>
+        </div>
+
+        <div [ngClass]="validadorFormGroup.getFormGroupClass(frm.controls.uf)">
+          <label for="uf" class="form-control-label">Estado/State *</label>
+          <input type="text" class="form-control" placeholder="Estado/State" id="uf" formControlName='uf'>
+          <validador-campo [controle]=frm.controls.uf></validador-campo>
+        </div>
+
+        <div class="form-group">
+          <label for="portifolio" class="form-control-label">Portfolio</label>
+          <input type="text" class="form-control" placeholder="Portfolio" formControlName='portifolio'>
+        </div>
+
+        <div class="form-group">
+          <label for="checkbox">What is your willingness to work today? / Qual é sua disponibilidade para trabalhar hoje?</label>
+
+          <div *ngIf="Lst_disphoras.length == 0" class="form-row alert alert-warning">Carregando informações. Aguarde.</div>
+
+          <div *ngFor="let object of candidato.lstCandidatoDisponibilidadeHoras">
+            <input type="checkbox" class="form-check-input" [checked]="object.marcar" id="ckb_horas_{{object.disponibilidadeHoras.id}}" (change)="SelecionarDispHoras($event.target.checked, object)"> {{object.disponibilidadeHoras.descricao}}
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="checkbox">What's the best time to work for you? / Pra você qual é o melhor horário para trabalhar?</label>
+
+          <div *ngIf="Lst_dispPeriodo.length == 0" class="form-row alert alert-warning">Carregando informações. Aguarde.</div>
+
+          <div *ngFor="let object of candidato.lstCandidatoDisponibilidadePeriodo">
+            <input type="checkbox" class="form-check-input" [checked]="object.marcar" id="ckb_periodo_{{object.disponibilidadePeriodo.id}}" (change)="SelecionarDispPeriodo($event.target.checked, object)"> {{object.disponibilidadePeriodo.descricao}}
+          </div>
+
+        </div>
+
+        <div [ngClass]="validadorFormGroup.getFormGroupClass(frm.controls.pretencao_salarial_hora)">
+          <label for="pretencao_salarial_hora" class="form-control-label">What is your hourly salary requirements? / Qual sua pretensão salarial por hora? *</label>
+          <input type="text" class="form-control" placeholder="Pretenção salarial" id="pretencao" formControlName='pretencao_salarial_hora'>
+          <validador-campo [controle]=frm.controls.pretencao_salarial_hora></validador-campo>
+        </div>
+
+        <div class="form-group">
+          <label for="range">Knowledge / Conhecimentos</label>
+          <div *ngIf="Lst_linguagem.length == 0" class="form-row alert alert-warning">Carregando informações. Aguarde.</div>
+          <div><small class="form-text text-muted">Rate yourself from 0 to 5 for the knowledge specified below, and that's okay if you do not know many things, the important thing is to be honest! / Avalie-se de 0 a 5 quanto aos conhecimentos especificados abaixo, e tudo bem se não souber de muitas coisas, o importante é que seja sincero!</small></div>
+          <div *ngFor="let object of candidato.lstCandidatoLinguagem">
+            <div class="form-control-label">{{object.linguagem.nome}}</div>
+            <div class="form-row">
+              <div class="form-group col-md-3 col-sm-3">
+                <p>Não conheço / I don't know</p>
+              </div>
+              <div class="form-group col-md-6 col-sm-6">
+                <input type="range" class="custom-range" min="0" max="5" step="1" id="range_{{object.linguagem.id}}" [value]="object.nota" (change)="DefinirNotaLinguagem($event.target.value, object.linguagem)">
+              </div>
+              <div class="form-group col-md-3 col-sm-3">
+                <p>Sênior</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="nota_outros" class="form-control-label">Do you know any other language or framework that was not listed above? Tell us and evaluate yourself from 0 to 5. / Conhece mais alguma linguagem ou framework que não foi listado aqui em cima? Conte para nos e se auto avalie ainda de 0 a 5.</label>
+          <input type="text" class="form-control" placeholder="" formControlName='nota_outros'>
+        </div>
+
+        <div [ngClass]="validadorFormGroup.getFormGroupClass(frm.controls.link_crud)">
+          <label for="link_crud" class="form-control-label">Link CRUD</label>
+          <input type="text" class="form-control" placeholder="Link CRUD" formControlName='link_crud'>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg" id="btn_gravar" [disabled]="!frm.valid">Gravar</button>
+
+      </form>
+
+</div>
