@@ -7,8 +7,8 @@ Pedro Farah
 
 screenshot de tela mostrando o chrome developer na aba de network:
 
-Tela cadastro de candidatos
+Tela de Cadastro de Candidatos
 ![](https://raw.githubusercontent.com/pedrofarah/easy/master/talents/webApi/TelaCadastroCandidatos.png)
 
-Tela de Pesquisa de cadastros de candidatos
+Tela de Pesquisa de Cadastros de Candidatos
 ![](https://raw.githubusercontent.com/pedrofarah/easy/master/talents/webApi/TelaPesquisaCandidatos.png)
