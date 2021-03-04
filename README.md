@@ -3,7 +3,7 @@ Crud Teste de Candidatos
 Utilizando ASP.NET Core / Entity Framework Core / Angular / MS SQL Server
 
 Pedro Farah
-(31) 98952.6752
+(14) 99103.0770
 
 Telas com a aba de Network do Chrome Developer:
 
